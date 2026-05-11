@@ -97,8 +97,32 @@ for(i in 1:nrow(air_quality))
 unhealthy_days
 ```
 
-## Part 4 
-# Bar chart showing the count of days in each risk category 
+## Part 4
+
+### Plot 1: Histogram showing PM2.5 concentrations across the year
+
+```{r}
+library(tidyverse)
+library(ggplot2)
+
+#| fig-cap: "Figure 1. Distribution of simulated PM2.5 concentrations by season."
+
+hist_concentration <- ggplot(air_quality, aes(x = pm25, fill = season)) +
+  geom_histogram() +
+   scale_fill_manual(values = c(
+     "winter" = "lightblue",
+    "spring" = "palegreen2",
+    "summer" = "lightgoldenrod1",
+    "fall" = "sienna3")) +
+  labs(title = sprintf("PM2.5 Concentrations by Season, Max Unhealthy Streak: %s Days", max_unhealthy_streak),
+    x = "PM2.5 Concentration",
+    y = "Number of Days")+
+    theme_minimal()
+
+hist_concentration
+```
+
+# Plot 2: Bar chart showing the count of days in each risk category 
 
 ```{r}
 library(ggplot2)
@@ -124,3 +148,8 @@ ggplot(air_quality, aes(x = risk, fill = risk)) +
   theme_minimal()
 
 ```
+
+## Interpretation of PM2.5 Monitoring Results 
+
+The simulated air quality data showed seasonal differences in PM2.5 and unhealthy air quality events throughout the year. Summer experienced the highest number of unhealthy days with 10 total days classified as unhealthy. Winter had the fewest unhealthy days at 6. Spring and fall showed moderate levels of unhealthy air quality with 7 and 8 days. The maximum consecutive streak of unhealthy air was only 2. Overall PM2.5 concentration had and average value of 18.38 ug/m3, with some extreme pollution events reaching a max of 56.89 ug/m3. These findings suggest that while most days experienced moderate air quality conditions, occasional shirt term pollution spikes could still pose risks to public health.
+
