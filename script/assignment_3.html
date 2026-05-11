@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>assignment_3</title>
+<title>Assignment 3: Seasonal Patterns in PM2.5 Concentrations</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -69,20 +69,38 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <link href="assignment_3_files/libs/quarto-html/quarto-syntax-highlighting-7b89279ff1a6dce999919e0e67d4d9ec.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="assignment_3_files/libs/bootstrap/bootstrap.min.js"></script>
 <link href="assignment_3_files/libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="assignment_3_files/libs/bootstrap/bootstrap-d6a003b94517c951b2d65075d42fb01b.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<link href="assignment_3_files/libs/bootstrap/bootstrap-a74871fe4945b66d259aafc266475145.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
 
 
+<link rel="stylesheet" href="styles.cs">
 </head>
 
-<body class="fullcontent quarto-light">
+<body class="quarto-light">
 
 <div id="quarto-content" class="page-columns page-rows-contents page-layout-article">
-
+<div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+  <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">Table of contents</h2>
+   
+  <ul>
+  <li><a href="#overview" id="toc-overview" class="nav-link active" data-scroll-target="#overview">Overview</a></li>
+  <li><a href="#part-1" id="toc-part-1" class="nav-link" data-scroll-target="#part-1">Part 1</a></li>
+  <li><a href="#part-2" id="toc-part-2" class="nav-link" data-scroll-target="#part-2">Part 2</a></li>
+  <li><a href="#part-3" id="toc-part-3" class="nav-link" data-scroll-target="#part-3">Part 3</a></li>
+  <li><a href="#part-4" id="toc-part-4" class="nav-link" data-scroll-target="#part-4">Part 4</a>
+  <ul class="collapse">
+  <li><a href="#plot-1-histogram-showing-pm2.5-concentrations-across-the-year" id="toc-plot-1-histogram-showing-pm2.5-concentrations-across-the-year" class="nav-link" data-scroll-target="#plot-1-histogram-showing-pm2.5-concentrations-across-the-year">Plot 1: Histogram showing PM2.5 concentrations across the year</a></li>
+  <li><a href="#plot-2-bar-chart-showing-the-count-of-days-in-each-risk-category" id="toc-plot-2-bar-chart-showing-the-count-of-days-in-each-risk-category" class="nav-link" data-scroll-target="#plot-2-bar-chart-showing-the-count-of-days-in-each-risk-category">Plot 2: Bar chart showing the count of days in each risk category</a></li>
+  </ul></li>
+  <li><a href="#interpretation-of-pm2.5-monitoring-results" id="toc-interpretation-of-pm2.5-monitoring-results" class="nav-link" data-scroll-target="#interpretation-of-pm2.5-monitoring-results">Interpretation of PM2.5 Monitoring Results</a></li>
+  </ul>
+</nav>
+</div>
 <main class="content" id="quarto-document-content">
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">assignment_3</h1>
+<h1 class="title">Assignment 3: Seasonal Patterns in PM2.5 Concentrations</h1>
 </div>
 
 
@@ -99,12 +117,9 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </header>
 
 
-<section id="assignment-3" class="level2">
-<h2 class="anchored" data-anchor-id="assignment-3">Assignment 3</h2>
 <section id="overview" class="level3">
 <h3 class="anchored" data-anchor-id="overview">Overview</h3>
 <p>This assignment involves simulating one year of daily air quality monitoring data, classifying pollution risk levels, and analyzing seasonal patterns in air quality conditions. All work should be completed within this Quarto document with all code and corresponding output clearly displayed.</p>
-</section>
 </section>
 <section id="part-1" class="level2">
 <h2 class="anchored" data-anchor-id="part-1">Part 1</h2>
@@ -263,9 +278,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </div>
 </div>
 </section>
-</section>
-<section id="plot-2-bar-chart-showing-the-count-of-days-in-each-risk-category" class="level1">
-<h1>Plot 2: Bar chart showing the count of days in each risk category</h1>
+<section id="plot-2-bar-chart-showing-the-count-of-days-in-each-risk-category" class="level3">
+<h3 class="anchored" data-anchor-id="plot-2-bar-chart-showing-the-count-of-days-in-each-risk-category">Plot 2: Bar chart showing the count of days in each risk category</h3>
 <div class="cell">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb15"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(ggplot2)</span>
 <span id="cb15-2"><a href="#cb15-2" aria-hidden="true" tabindex="-1"></a><span class="co">#ggplot - bar chart showing the count of days in each risk category </span></span>
@@ -296,10 +310,13 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </div>
 </div>
 </div>
+</section>
+</section>
 <section id="interpretation-of-pm2.5-monitoring-results" class="level2">
 <h2 class="anchored" data-anchor-id="interpretation-of-pm2.5-monitoring-results">Interpretation of PM2.5 Monitoring Results</h2>
 <p>The simulated air quality data showed seasonal differences in PM2.5 and unhealthy air quality events throughout the year. Summer experienced the highest number of unhealthy days with 10 total days classified as unhealthy. Winter had the fewest unhealthy days at 6. Spring and fall showed moderate levels of unhealthy air quality with 7 and 8 days. The maximum consecutive streak of unhealthy air was only 2. Overall PM2.5 concentration had and average value of 18.38 ug/m3, with some extreme pollution events reaching a max of 56.89 ug/m3. These findings suggest that while most days experienced moderate air quality conditions, occasional shirt term pollution spikes could still pose risks to public health.</p>
-</section>
+<p>The histogram shows that most PM2.5 concentrations were clustered within the lower to moderate ranges, while a smaller number of days experienced much higher pollution levels. Seasonal color differences in the histogram also highlight that summer and fall tended to have more elevated PM2.5 concentrations compared to winter and spring.</p>
+<p>The bar chart shows that most days during the simulated year fell within the moderate air quality category, while fewer days were classified as good or unhealthy. This suggests that air quality was generally acceptable but still included frequent exposure to moderate PM2.5 pollution levels. The relatively short maximum unhealthy streak indicates that severe pollution events were not long-lasting, but continued monitoring and pollution reduction efforts remain important for protecting public health.</p>
 </section>
 
 </main>
