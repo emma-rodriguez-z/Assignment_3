@@ -1,5 +1,5 @@
 ---
-title: "Assignment 3: Seasonal Patterns in Pm2.5 Concentrations"
+title: "Assignment 3: Seasonal Patterns in PM2.5 Concentrations"
 aurthor: Lauren Chetley & Emma Rodriguez
 format:
   html:
@@ -123,11 +123,7 @@ hist_concentration <- ggplot(air_quality, aes(x = pm25, fill = season)) +
 hist_concentration
 ```
 
-<<<<<<< HEAD
-# Plot 2: Bar chart showing the count of days in each risk category
-=======
 ### Plot 2: Bar chart showing the count of days in each risk category
->>>>>>> f49b85bdc8e20d6a6041ba52503d7e316df5605a
 
 ```{r}
 library(ggplot2)
@@ -157,8 +153,6 @@ ggplot(air_quality, aes(x = risk, fill = risk)) +
 ## Interpretation of PM2.5 Monitoring Results
 
 The simulated air quality data showed seasonal differences in PM2.5 and unhealthy air quality events throughout the year. Summer experienced the highest number of unhealthy days with 10 total days classified as unhealthy. Winter had the fewest unhealthy days at 6. Spring and fall showed moderate levels of unhealthy air quality with 7 and 8 days. The maximum consecutive streak of unhealthy air was only 2. Overall PM2.5 concentration had and average value of 18.38 ug/m3, with some extreme pollution events reaching a max of 56.89 ug/m3. These findings suggest that while most days experienced moderate air quality conditions, occasional shirt term pollution spikes could still pose risks to public health.
-<<<<<<< HEAD
-=======
 
 The bar chart shows that most days during the simulated year fell within the moderate air quality category, while fewer days were classified as good or unhealthy. This suggests that air quality was generally acceptable but still included frequent exposure to moderate PM2.5 pollution levels. The relatively short maximum unhealthy streak indicates that severe pollution events were not long-lasting, but continued monitoring and pollution reduction efforts remain important for protecting public health.
->>>>>>> f49b85bdc8e20d6a6041ba52503d7e316df5605a
+
