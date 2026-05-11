@@ -1,11 +1,12 @@
 ---
-title: "assignment_3"
-format: html
+title: "Assignment 3: Seasonal Patterns in Pm2.5 Concentrations"
 aurthor: Lauren Chetley & Emma Rodriguez
-editor: visual
+format:
+  html:
+    theme: cosmo
+    toc: true
+    css: styles.cs
 ---
-
-## Assignment 3
 
 ### Overview
 
