@@ -153,13 +153,11 @@ ggplot(air_quality, aes(x = risk, fill = risk)) +
 ## Interpretation of PM2.5 Monitoring Results
 
 The simulated air quality data showed seasonal differences in PM2.5 and unhealthy air quality events throughout the year. Summer experienced the highest number of unhealthy days with 10 total days classified as unhealthy. Winter had the fewest unhealthy days at 6. Spring and fall showed moderate levels of unhealthy air quality with 7 and 8 days. The maximum consecutive streak of unhealthy air was only 2. Overall PM2.5 concentration had and average value of 18.38 ug/m3, with some extreme pollution events reaching a max of 56.89 ug/m3. These findings suggest that while most days experienced moderate air quality conditions, occasional shirt term pollution spikes could still pose risks to public health.
-<<<<<<< HEAD
 
 The histogram shows that most PM2.5 concentrations were clustered within the lower to moderate ranges, while a smaller number of days experienced much higher pollution levels. Seasonal color differences in the histogram also highlight that summer and fall tended to have more elevated PM2.5 concentrations compared to winter and spring.
 
 The bar chart shows that most days during the simulated year fell within the moderate air quality category, while fewer days were classified as good or unhealthy. This suggests that air quality was generally acceptable but still included frequent exposure to moderate PM2.5 pollution levels. The relatively short maximum unhealthy streak indicates that severe pollution events were not long-lasting, but continued monitoring and pollution reduction efforts remain important for protecting public health.
-=======
 
-The bar chart shows that most days during the simulated year fell within the moderate air quality category, while fewer days were classified as good or unhealthy. This suggests that air quality was generally acceptable but still included frequent exposure to moderate PM2.5 pollution levels. The relatively short maximum unhealthy streak indicates that severe pollution events were not long-lasting, but continued monitoring and pollution reduction efforts remain important for protecting public health.
 
->>>>>>> 3be4ac8d5a3b73df5a50eb3de501fe9df895eceb
+
+
