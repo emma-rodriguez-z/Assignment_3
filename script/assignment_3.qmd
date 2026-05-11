@@ -1,26 +1,98 @@
 ---
 title: "assignment_3"
 format: html
+aurthor: Lauren Chetley & Emma Rodriguez
 editor: visual
 ---
 
-## Quarto
+## Assignment 3
 
-Quarto enables you to weave together content and executable code into a finished document. To learn more about Quarto see <https://quarto.org>.
+### Overview
 
-## Running Code
+This assignment involves simulating one year of daily air quality monitoring data, classifying pollution risk levels, and analyzing seasonal patterns in air quality conditions. All work should be completed within this Quarto document with all code and corresponding output clearly displayed.
 
-When you click the **Render** button a document will be generated that includes both content and the output of embedded code. You can embed code like this:
-
-```{r}
-1 + 1
-```
-
-You can add options to executable code like this
+## Part 1
 
 ```{r}
-#| echo: false
-2 * 2
+
+set.seed(123)
+
+# create day column and generate realistic PM2.5 values
+air_quality <- data.frame(
+  day = 1:365,
+  pm25 = rnorm(365, mean = 18, sd = 12)
+)
+
+# create season column
+air_quality$season <- factor(
+  ifelse(air_quality$day <= 90, "winter",
+         ifelse(air_quality$day <= 180, "spring",
+                ifelse(air_quality$day <= 270, "summer", "fall"))),
+  levels = c("winter", "spring", "summer", "fall")
+)
+
+# create empty risk column
+air_quality$risk <- NA
+
+head(air_quality)
 ```
 
-The `echo: false` option disables the printing of code (only output is displayed).
+## Part 2
+
+```{r}
+
+# create empty risk column
+air_quality$risk <- NA
+
+# variables to track unhealthy streaks
+current_unhealthy_streak <- 0
+max_unhealthy_streak <- 0
+
+# for loop to classify risk levels
+for(i in 1:nrow(air_quality))
+  {
+  if(air_quality$pm25[i] < 12)  # good air quality
+    { air_quality$risk[i] <- "good"
+      current_unhealthy_streak <- 0}
+  
+  else if(air_quality$pm25[i] >= 12 & air_quality$pm25[i] <= 35.4)  # moderate air quality 
+    { air_quality$risk[i] <- "moderate"
+      current_unhealthy_streak <- 0}
+  
+  else {air_quality$risk[i] <- "unhealthy" # unhealthy air quality 
+  
+  if(air_quality$risk[i] == "unhealthy")
+  {current_unhealthy_streak <- current_unhealthy_streak + 1
+  
+  if(current_unhealthy_streak > max_unhealthy_streak)
+  {max_unhealthy_streak <- current_unhealthy_streak}}
+  
+  else
+  {current_unhealthy_streak <- 0}}
+}
+
+head(air_quality)
+
+# longest unhealthy streak 
+max_unhealthy_streak
+
+summary(air_quality$pm25)
+```
+
+## Part 3
+
+```{r}
+
+# create vector to store unhealthy day counts
+unhealthy_days <- c(winter = 0, spring = 0, summer = 0, fall = 0)
+
+for(i in 1:nrow(air_quality)) 
+  {
+  
+  if(air_quality$risk[i] == "unhealthy") 
+    {season_name <- as.character(air_quality$season[i])
+    unhealthy_days[season_name] <- unhealthy_days[season_name] + 1}
+}
+
+unhealthy_days
+```
