@@ -96,3 +96,31 @@ for(i in 1:nrow(air_quality))
 
 unhealthy_days
 ```
+
+## Part 4 
+# Bar chart showing the count of days in each risk category 
+
+```{r}
+library(ggplot2)
+#ggplot - bar chart showing the count of days in each risk category 
+ggplot(air_quality, aes(x = risk, fill = risk)) +
+  geom_bar(
+    color = "black",
+    width = 0.7) +
+  scale_fill_manual(
+    values = c(
+      "good" = "#A8E6A3",
+      "moderate" = "#FFF38C",
+      "unhealthy" = "#FF9E9E"),
+    labels = c("Good", "Moderate", "Unhealthy")) +
+  scale_x_discrete(labels = c("Good", "Moderate", "Unhealthy"))+
+  labs(
+    title = sprintf(
+      "Count of Days by Risk Category - Max Unhealthy Streak: %s Days",
+      max_unhealthy_streak),
+    x = "Risk Category",
+    y = "Number of Days",
+    fill = "Risk Category") +
+  theme_minimal()
+
+```
